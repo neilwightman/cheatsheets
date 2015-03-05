@@ -3,13 +3,41 @@ SVN CheatSheet
 
 ## Basics
 
+### Checkout
+
 ```bash
 svn checkout http://yourserver.com/repos/project_name/trunk/ project_name
 cd project_name
+```
+### Update
+
+```bash
+# Check status
 svn status
+# Update to HEAD
 svn up
+# Update to revision 30
+svn update -r30
+```
+
+### Diff
+
+```bash
+# Diff local changes to BASE
 svn diff file.txt
+# Diff a single change to the file at rev 1234
+svn diff -c 1234 file.txt
+# Diff local file to a rev 1234
+svn diff -r 1234 file.txt
+# Diff file.txt from rev 3000 to 3500 (file must exist at rev 3000 + 3500)
+svn diff -r 3000:3500 file.txt
+svn diff -r 3000:3500 http://yourserver.com/repos/project_name/file.txt
+```
+
+```bash
+# Commit all changes pending (svn status)
 svn commit -m "A message"
+# Commit only thisfileonly.txt
 svn commit -m "A message" thisfileonly.txt
 ```
 
