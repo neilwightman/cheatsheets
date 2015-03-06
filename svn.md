@@ -12,12 +12,13 @@ cd project_name
 ### Update
 
 ```bash
-# Check status
+# Check status (svn help status - shows help about what the letters mean) 
 svn status
+
 # Update to HEAD
 svn up
 # Update to revision 30
-svn update -r30
+svn update -r 30
 ```
 
 ### Diff
