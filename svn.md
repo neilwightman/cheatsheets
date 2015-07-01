@@ -35,11 +35,42 @@ svn diff -r 3000:3500 file.txt
 svn diff -r 3000:3500 http://yourserver.com/repos/project_name/file.txt
 ```
 
+### Undelete
+
+```bash
+# Svn log to find revision file was deleted at
+svn log -v
+# Svn up to the revision before to recover files (rev of delete -1)
+svn up -r 47870 file1.txt file2.txt
+```
+
 ```bash
 # Commit all changes pending (svn status)
 svn commit -m "A message"
 # Commit only thisfileonly.txt
 svn commit -m "A message" thisfileonly.txt
+```
+
+### Merge
+
+ * merge - `svn merge -c 12345 <url> localfile
+
+```bash
+cd branch/
+svn merge -c 12345 http://yourserver.com/repos/new_project/trunk/ .
+```
+
+```
+cd branch/
+# undo a specific change on trunk
+svn merge -c -12345 
+```
+
+### Revert
+
+```bash
+# undo local modifications to foo.c
+svn revert foo.c
 ```
 
 ## New Project
