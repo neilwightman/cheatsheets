@@ -65,6 +65,11 @@ cd branch/
 svn merge -c -12345 
 ```
 
+```bash
+# revert project directory to version 268
+svn merge -r HEAD:268 .
+```
+
 ### Revert
 
 ```bash
