@@ -53,14 +53,13 @@ svn commit -m "A message" thisfileonly.txt
 
 ### Merge
 
- * merge - `svn merge -c 12345 <url> localfile
-
 ```bash
 cd branch/
+# merge a single change from trunk to your branch
 svn merge -c 12345 http://yourserver.com/repos/new_project/trunk/ .
 ```
 
-```
+```bash
 cd branch/
 # undo a specific change on trunk
 svn merge -c -12345 
