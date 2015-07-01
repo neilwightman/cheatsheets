@@ -77,6 +77,24 @@ svn merge -r HEAD:268 .
 svn revert foo.c
 ```
 
+### Conflicts
+
+```bash
+$ svn update
+Updating '.':
+Conflict discovered in 'foo.c'.
+Select: (p) postpone, (df) diff-full, (e) edit,
+        (mc) mine-conflict, (tc) theirs-conflict,
+        (s) show all options: p
+C    foo.c
+Updated to revision 5.
+Summary of conflicts:
+  Text conflicts: 1
+$ svn resolve --accept theirs-conflict foo.c
+Resolved conflicted state of 'foo.c'
+$
+```
+
 ## New Project
 
 If a new project with directory `new_project` which contains the current
