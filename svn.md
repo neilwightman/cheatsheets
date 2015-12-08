@@ -44,6 +44,8 @@ svn log -v
 svn up -r 47870 file1.txt file2.txt
 ```
 
+## Commit
+
 ```bash
 # Commit all changes pending (svn status)
 svn commit -m "A message"
@@ -62,7 +64,7 @@ svn merge -c 12345 http://yourserver.com/repos/new_project/trunk/ .
 ```bash
 cd branch/
 # undo a specific change on trunk
-svn merge -c -12345 
+svn merge -c -12345 .
 ```
 
 ```bash
@@ -143,3 +145,10 @@ which will become
 target
 *.log
 ```
+
+## Branch
+
+ * tag - `svn copy http://yourserver.com/repos/new_project/trunk/ http://yourserver.com/repos/new_project/tags/release-1.0 -m "Tagging release 1.0"`
+ * branch - `svn copy http://yourserver.com/repos/new_project/trunk/ http://yourserver.com/repos/new_project/branche/dev-1.x -m "Create branch 1.x"`
+
+Using -r12345 will take a copy at a specific point.
